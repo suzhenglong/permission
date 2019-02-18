@@ -1,5 +1,5 @@
-<%@ page import="com.csii.common.RequestHolder" %>
-<%@ page import="com.csii.model.SysUser" %>
+<%@ page import="com.suzl.common.RequestHolder" %>
+<%@ page import="com.suzl.model.SysUser" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">

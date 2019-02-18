@@ -11,12 +11,12 @@
     <mvc:annotation-driven/>
 
     <mvc:interceptors>
-        <bean class="com.csii.common.HttpInterceptor"/>
+        <bean class="com.suzl.common.HttpInterceptor"/>
     </mvc:interceptors>
 
     <!-- 启动包扫描功能 -->
-    <context:component-scan base-package="com.csii.controller"/>
-    <context:component-scan base-package="com.csii.service"/>
+    <context:component-scan base-package="com.suzl.controller"/>
+    <context:component-scan base-package="com.suzl.service"/>
 
     <mvc:resources location="/js/" mapping="/js/**"/>
     <mvc:resources location="/css/" mapping="/css/**"/>
@@ -25,7 +25,7 @@
     <mvc:resources location="/ztree/" mapping="/ztree/**"/>
     <mvc:resources location="/controllers/" mapping="/controllers/**"/>
 
-    <bean class="com.csii.common.ApplicationContextHelper" lazy-init="false"/>
+    <bean class="com.suzl.common.ApplicationContextHelper" lazy-init="false"/>
 
     <!-- -->
     <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>
@@ -35,7 +35,7 @@
     <!--id必须为jsonView -->
     <bean id="jsonView" class="org.springframework.web.servlet.view.json.MappingJackson2JsonView"/>
 
-    <bean class="com.csii.common.SpringExceptionResolver"/>
+    <bean class="com.suzl.common.SpringExceptionResolver"/>
 
     <!-- 界面返回 -->
     <!-- 视图渲染 -->

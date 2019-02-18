@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.csii.dao.SysLogMapper">
-    <resultMap id="BaseResultMap" type="com.csii.model.SysLog">
+<mapper namespace="com.suzl.dao.SysLogMapper">
+    <resultMap id="BaseResultMap" type="com.suzl.model.SysLog">
         <id column="id" jdbcType="INTEGER" property="id"/>
         <result column="type" jdbcType="INTEGER" property="type"/>
         <result column="target_id" jdbcType="INTEGER" property="targetId"/>
@@ -10,7 +10,7 @@
         <result column="operate_ip" jdbcType="VARCHAR" property="operateIp"/>
         <result column="status" jdbcType="INTEGER" property="status"/>
     </resultMap>
-    <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.csii.model.SysLogWithBLOBs">
+    <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.suzl.model.SysLogWithBLOBs">
         <result column="old_value" jdbcType="LONGVARCHAR" property="oldValue"/>
         <result column="new_value" jdbcType="LONGVARCHAR" property="newValue"/>
     </resultMap>
@@ -32,7 +32,7 @@
     delete from sys_log
     where id = #{id,jdbcType=INTEGER}
   </delete>
-    <insert id="insert" parameterType="com.csii.model.SysLogWithBLOBs">
+    <insert id="insert" parameterType="com.suzl.model.SysLogWithBLOBs">
     insert into sys_log (id, type, target_id, 
       operator, operate_time, operate_ip, 
       status, old_value, new_value
@@ -42,7 +42,7 @@
       #{status,jdbcType=INTEGER}, #{oldValue,jdbcType=LONGVARCHAR}, #{newValue,jdbcType=LONGVARCHAR}
       )
   </insert>
-    <insert id="insertSelective" parameterType="com.csii.model.SysLogWithBLOBs">
+    <insert id="insertSelective" parameterType="com.suzl.model.SysLogWithBLOBs">
         insert into sys_log
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="id != null">
@@ -103,7 +103,7 @@
             </if>
         </trim>
     </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="com.csii.model.SysLogWithBLOBs">
+    <update id="updateByPrimaryKeySelective" parameterType="com.suzl.model.SysLogWithBLOBs">
         update sys_log
         <set>
             <if test="type != null">
@@ -133,7 +133,7 @@
         </set>
         where id = #{id,jdbcType=INTEGER}
     </update>
-    <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.csii.model.SysLogWithBLOBs">
+    <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.suzl.model.SysLogWithBLOBs">
     update sys_log
     set type = #{type,jdbcType=INTEGER},
       target_id = #{targetId,jdbcType=INTEGER},
@@ -145,7 +145,7 @@
       new_value = #{newValue,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
-    <update id="updateByPrimaryKey" parameterType="com.csii.model.SysLog">
+    <update id="updateByPrimaryKey" parameterType="com.suzl.model.SysLog">
     update sys_log
     set type = #{type,jdbcType=INTEGER},
       target_id = #{targetId,jdbcType=INTEGER},
